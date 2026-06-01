@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estructura de Internet</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', system-ui, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: radial-gradient(circle at top, #1e1b4b 0%, #0f172a 100%);
+            color: #f1f5f9;
+            min-height: 100vh;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: rgba(15, 23, 42, 0.6);
+            border-bottom: 2px solid #06b6d4;
+            box-shadow: 0 4px 30px rgba(6, 182, 212, 0.2);
+        }
+        header h1 {
+            margin: 0;
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(to right, #38bdf8, #06b6d4);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        nav {
+            background: rgba(30, 41, 59, 0.7);
+            backdrop-filter: blur(10px);
+            padding: 15px;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 100;
+        }
+        nav a {
+            color: #94a3b8;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 5px;
+            font-weight: 600;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+        nav a:hover { color: #fff; background: #06b6d4; box-shadow: 0 0 15px #06b6d4; }
+        main {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 40px;
+            background: rgba(30, 41, 59, 0.4);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        h2 { color: #38bdf8; font-size: 2rem; border-bottom: 1px solid rgba(56, 189, 248, 0.3); padding-bottom: 10px; }
+        h3 { color: #22d3ee; margin-top: 25px; }
+        p, li { line-height: 1.8; color: #cbd5e1; }
+        ul { padding-left: 20px; }
+        li strong { color: #38bdf8; }
+        .img-container {
+            text-align: center;
+            margin: 30px 0;
+            background: rgba(15, 23, 42, 0.4);
+            padding: 15px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .img-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        footer { text-align: center; padding: 30px; color: #64748b; margin-top: 50px; border-top: 1px solid rgba(255, 255, 255, 0.05); }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Infraestructura Global de Internet</h1>
+    </header>
+
+    <nav>
+        <a href="index.html">🏠 Inicio</a>
+        <a href="sitio-web.html" style="color: #fff; background: #06b6d4; box-shadow: 0 0 15px #06b6d4;">🌐 ¿Qué es una Web?</a>
+        <a href="html-css.html">🧩 HTML y CSS</a>
+        <a href="publicacion.html">☁️ Publicación y Legal</a>
+        <a href="ia.html">🤖 Uso de IA</a>
+    </nav>
+
+    <main>
+        <h2>Conceptos de la Red</h2>
+        <ul>
+            <li><strong>Página Web:</strong> Un documento electrónico digital programado en código (como HTML) que contiene los datos multimedia básicos. Puede ser estática (muestra contenido fijo) o dinámica (se adapta según las peticiones).</li>
+            <li><strong>Sitio Web (Website):</strong> El grupo completo de documentos y páginas web conectadas entre sí que forman un espacio accesible bajo un mismo enlace o dominio raíz.</li>
+        </ul>
+
+        <div class="img-container">
+            <img src="imagenes/comofuncionaunsitioweb.png" alt="Ciclo de una petición web y componentes de un sitio">
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">Diagrama 1: El ciclo de petición del navegador y herramientas del servidor.</p>
+        </div>
+
+        <h2>🌍 ¿Cómo viaja la información por Internet?</h2>
+        <p>Al pulsar un enlace o escribir una URL en la barra de direcciones del navegador, se activa un intercambio de datos instantáneo estructurado paso a paso:</p>
+
+        <h3>1. Solicitud inicial y envío al ISP</h3>
+        <p>El usuario escribe la dirección web. El <strong>Navegador (Cliente)</strong> indica la acción a realizar. Inmediatamente, el router de casa envía esa solicitud al <strong>ISP (Proveedor de Servicios de Internet)</strong>.</p>
+
+        <h3>2. Traducción DNS (Sistema de Nombres de Dominio)</h3>
+        <p>Como las máquinas se comunican mediante números, la solicitud se enruta a un servidor DNS. Este se encarga de traducir el dominio legible (ej. <code>tusitio.com</code>) en una <strong>Dirección IP</strong> numérica real.</p>
+
+        <h3>3. Protocolo TCP/IP y Fragmentación de Datos</h3>
+        <p>El protocolo <strong>TCP/IP</strong> divide la información de la web en pequeños <strong>paquetes de datos</strong>. Estos paquetes viajan a través de la red física hasta el servidor de destino que guarda de forma física el sitio web.</p>
+
+        <h3>4. Procesamiento HTTP/HTTPS y Respuesta</h3>
+        <p>El <strong>Servidor (Host)</strong> ejecuta la solicitud a través del idioma estándar <strong>HTTP</strong> (o <strong>HTTPS</strong> cifrado de forma segura) y devuelve el código estructurado en HTML de vuelta al cliente.</p>
+
+        <h3>5. Interpretación Visual del Navegador</h3>
+        <p>El navegador web del cliente recibe el código HTML empaquetado, lo procesa, interpreta los estilos y los renderiza en la pantalla de manera organizada para mostrar el entorno visual final.</p>
+
+        <div class="img-container">
+            <img src="imagenes/comoviajalainfo.png" alt="Mapa de viaje de la información en internet">
+            <p style="font-size: 0.85rem; color: #64748b; margin-top: 10px;">Diagrama 2: Las 6 fases del flujo de información en la red.</p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 - JMP</p>
+    </footer>
+
+</body>
+</html>
